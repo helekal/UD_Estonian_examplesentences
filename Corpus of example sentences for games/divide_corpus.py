@@ -3,8 +3,8 @@ CoNLL-X and CoNLL-U file readers and writers
 """
 __author__ = "Pierre Nugues"
 # https://raw.githubusercontent.com/pnugues/ilppp/master/programs/labs/relation_extraction/python/conll.py
-
-# python divide_corpus.py marked_files
+# code has been adapted to serve a different purpose
+# python divide_corpus.py folder_name
 
 import os
 import re
