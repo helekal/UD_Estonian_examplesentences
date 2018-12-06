@@ -1,7 +1,6 @@
 # UD_Estonian_examplesentences
-ÜLDKIRJELDUS
-
+ÜLDKIRJELDUS JMS VAJA LISADA!
 ### Corpus of syntactically annotated example sentences divided into game levels
-Mängutasemete jaotusega süntaktiliselt analüüsitud näitelausete korpuse automaatne loomine
-
+LISADA
 ### Syntactically annotated example sentences with Sketch Engine
+LISADA
