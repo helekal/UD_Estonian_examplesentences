@@ -26,7 +26,7 @@ Python file "marklevels.py" is a command line program:  cat „INPUT_FILE“ | u
 
 Input file has to be a file in CoNLL-U-format (eg files of Universal Dependencies Treebank).
 
-File "divide_corpus.py" removes from "marklevels.py" output file all the sentences with tags "Not" or "NotTrv" and divides sentences into different files according level tags. One sentence can be in more than one file, if it had several level tags. 
+File "divide_corpus.py" removes from "marklevels.py" output file all the sentences with tags "Not" or "NotTrv" and divides sentences into different files according level tags. Every sentence can be in more than one file, if it had several level tags. 
 
 Python file "divide_corpus.py" is a command line program, that takes a foldername (folder consisting only "marklevels.py" output file(s)) as a required argument.
 
