@@ -6,7 +6,7 @@ Every sentence has it's own ID (# sent_id). In all the sentence there is at leas
 FOR EXAMPLE:
 If Lvl=1 is tagged to a word with syntactic relation "nsubj" in a sentence, it means in that sentence a player has to either find a subject OR the word with Lvl-tag is brought out and the player is supposed to give a correct syntactic function for it.
 
-Below are given parts of the sentences and their corresponding syntactic relations used in this version of corpus:
+Below are given parts of the sentence and their corresponding syntactic relations used in this version of corpus:
 
 | Part of the sentence | Syntactic relation | 
 | --- | --- | 
