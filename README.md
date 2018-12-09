@@ -36,3 +36,4 @@ Programs as Udapi, Python 3 and tool Estnltk 1.4 have to be installed.
 Python file "sketchengine_syntax.py" cleans corpus downloaded from Sketch Engine subcorpus wiki17 and adds syntactic analysis. The output is a CSV-file where every word with it's syntactic function is on a separate line, between sentences there is a blank line. The quality of syntactic analysis was weak and thus the output was not used in the making of real corpus described below.
 
 Python file "sketchengine_syntax.py" is a command line program, that takes a filename of downloaded Sketch Engine corpus as a required argument.
+For running files "inappropriate_words.txt" (list of inappropriate words) has to be in the same folder with the program file.
