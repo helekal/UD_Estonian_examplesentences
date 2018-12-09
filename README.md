@@ -4,9 +4,9 @@ Corpus is designed especially for games teaching parts of the sentence where exa
 Every sentence has it's own ID (# sent_id). In all the sentence there is at least one Lvl-tag (eg Lvl=1). Words with such tags are suitable to be asked in a game. 
 
 FOR EXAMPLE:
-If Lvl=1 is tagged to a word with syntactic relation "nsubj" in a sentence, it means in that sentence a player has to either find a subject OR the word with Lvl-tag is brought out and a player is supposed to give a correct syntactic function to it.
+If Lvl=1 is tagged to a word with syntactic relation "nsubj" in a sentence, it means in that sentence a player has to either find a subject OR the word with Lvl-tag is brought out and the player is supposed to give a correct syntactic function to it.
 
-Below are given what parts of the sentences different syntactic relations used in corpus stand for:
+Below are given parts of the sentences and their corresponding syntactic relations:
 
 | Part of the sentence | Syntactic relation | 
 | --- | --- | 
