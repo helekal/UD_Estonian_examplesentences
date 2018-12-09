@@ -22,7 +22,11 @@ Below are given parts of the sentences and their corresponding syntactic relatio
 ### How to run and compile a similar corpus?
 File "marklevels.py" reads a file in CoNLL-U-format, adds information about levels (Lvl="level_number") or unsuitable sentences ("Not"/"NotTrv"). For running files "markrootlevels.py", "inappropriate_words.txt" (list of inappropriate words) and "unsuitable_adverbs.txt" (list of unsuitable adverbs) have to be in the same folder with "marklevels.py". 
 
-Python file "marklevels.py" is a command line program:  cat „INPUT_FILE“ | udapy -s .MarkRootLevels | udapy -s .MarkLevels > „OUTPUT_FILE“. Input file has to be a file in CoNLL-U-format (eg files of Universal Dependencies Treebank).
+Python file "marklevels.py" is a command line program:  cat „INPUT_FILE“ | udapy -s .MarkRootLevels | udapy -s .MarkLevels > „OUTPUT_FILE“. 
+
+Input file has to be a file in CoNLL-U-format (eg files of Universal Dependencies Treebank).
+
+Program as Udapi, Python 3 and tool Estnltk 1.4 have to be installed.
 
 ### Syntactically annotated example sentences with Sketch Engine
 LISADA
