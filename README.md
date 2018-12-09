@@ -33,6 +33,6 @@ Python file "divide_corpus.py" is a command line program, that takes a foldernam
 Programs as Udapi, Python 3 and tool Estnltk 1.4 have to be installed.
 
 ### Syntactically annotated example sentences with Sketch Engine
-Python file "sketchengine_syntax.py" cleans corpus downloaded from Sketch Engine subcorpus wiki17 and adds syntactic analysis. The quality of syntactic analysis was weak and thus the output was not used in the real corpus.
+Python file "sketchengine_syntax.py" cleans corpus downloaded from Sketch Engine subcorpus wiki17 and adds syntactic analysis. The quality of syntactic analysis was weak and thus the output was not used when making the real corpus.
 
 Python file "sketchengine_syntax.py" is a command line program, that takes a filename of downloaded Sketch Engine corpus as a required argument.
