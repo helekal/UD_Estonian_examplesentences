@@ -7,6 +7,9 @@ FOR EXAMPLE:
 If Lvl=1 is tagged to a word with syntactic relation "nsubj" in a sentence, it means in that sentence a player has to either find a subject OR the word with Lvl-tag is brought out and a player is supposed to give a correct syntactic function to it.
 
 Below are given what parts of the sentences different syntactic relations used in corpus stand for:
+
+| Part of the sentence | Syntactic relation | 
+| --- | --- | 
 | Subject | nsubj; nsubj:cop; csubj; csubj:cop |
 | Predicate | root (used in Level 1 and Level 13) |
 | Object | obj |
