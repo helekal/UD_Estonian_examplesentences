@@ -3,6 +3,9 @@ Corpus is designed especially for games teaching parts of the sentence where exa
 
 Every sentence has it's own ID (# sent_id). In all the sentence there is at least one Lvl-tag (eg Lvl=1). Words with such tags are suitable to be asked in a game. 
 
+FOR EXAMPLE:
+If Lvl=1 is tagged to a word with syntactic relation "nsubj" in a sentence, it means in that sentence a player has to either find a subject or the word with Lvl-tag is brought out and player is supposed to give a correct syntactic function to it.
+
 ### How to run the programs that compile the corpus?
 LISADA
 
