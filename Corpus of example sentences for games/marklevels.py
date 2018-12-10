@@ -301,7 +301,7 @@ class MarkLevels(Block):
                     self.log(node, '13','predicative in short simple clauses')
                     
                     
-            # LEVELS 7-11, max 10 words (simple clauses)
+            # LEVELS 7-10, max 10 words (simple clauses)
             # min 6 words, max 10 words, 1 verb (except verb+aux if no conjunction), flat, conj and case not allowed as governees, 1 punct.
             # in these levels deprel that is asked is in a certain form, but other deprels, that also are requested, can usually be in any form (just have to present)
             if len(node.root.descendants)>6 and len(node.root.descendants)<12 and r.misc['Lvl']!="NotTrv" and "conj" not in chdeprels and "flat" not in chdeprels and "case" not in chdeprels and l.count("punct") == 1:
