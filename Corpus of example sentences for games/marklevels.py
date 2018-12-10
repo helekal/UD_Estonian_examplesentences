@@ -346,7 +346,7 @@ class MarkLevels(Block):
                     self.log(node, '8','nominal modifier and adverbial in longer simple clauses') # nmod - Lvl 8
                     self.log(node, '13','nominal modifier and adverbial in longer simple clauses')
                 # amod - gen (+ adverbial)
-                if deprel=="amod" and len(amod_not_8)==0 and len(nmod_not_8)==0 and node.feats["Case"]=="Gen" and node.xpos!="Y" and "obl" in l and l.count("punct") == 1 and "nummod" not in l and len(acl_not_8)==0:
+                if deprel=="amod" and upos in ["ADJ"] and len(amod_not_8)==0 and len(nmod_not_8)==0 and node.feats["Case"]=="Gen" and node.xpos!="Y" and "obl" in l and l.count("punct") == 1 and "nummod" not in l and len(acl_not_8)==0:
                     self.log(node, '8','adjectival modifier and adverbial in longer simple clauses') # amod - Lvl 8
                     self.log(node, '13','adjectival modifier and adverbial in longer simple clauses')
                 # acl (+ adverbial)
@@ -354,11 +354,11 @@ class MarkLevels(Block):
                     self.log(node, '8','modifier and adverbial in longer simple clauses') # acl - Lvl 8
                     self.log(node, '13','modifier and adverbial in longer simple clauses')
                 # obl - nom, gen, par (+ modifier)
-                if deprel=="obl" and feats["Case"] in ["Nom","Gen","Par"] and upos in ["NOUN","PROPN"] and ("nmod" in [obj.deprel for obj in node.root.descendants] or "amod" in [obj.deprel for obj in node.root.descendants] or "acl" in [obj.deprel for obj in node.root.descendants]) and l.count("punct") == 1 and "nummod" not in l and "advmod" not in l and len(xcomp_not)==0 and len(obl_case_not)==0 and len(obl_wrong_case)==0 and len(obl_wrong_upos)==0:
+                if deprel=="obl" and feats["Case"] in ["Nom","Gen","Par"] and upos in ["NOUN","PROPN"] and ("nmod" in l or "amod" in l or "acl" in l) and l.count("punct") == 1 and "nummod" not in l and "advmod" not in l and len(xcomp_not)==0 and len(obl_case_not)==0 and len(obl_wrong_case)==0 and len(obl_wrong_upos)==0:
                     self.log(node, '8','modifier and adverbial in longer simple clauses') # obl - Lvl 8
                     self.log(node, '13','modifier and adverbial in longer simple clauses')
                 # xcomp adj/noun (+ modifier)
-                if deprel == "xcomp" and upos in ["NOUN","ADJ"] and ("nmod" in [obj.deprel for obj in node.root.descendants] or "amod" in [obj.deprel for obj in node.root.descendants] or "acl" in [obj.deprel for obj in node.root.descendants]) and l.count("punct") == 1 and "nummod" not in l and "advmod" not in l and len(xcomp_not)==0 and len(obl_case_not)==0 and len(obl_wrong_case)==0 and len(obl_wrong_upos)==0: 
+                if deprel == "xcomp" and upos in ["NOUN","ADJ"] and ("nmod" in l or "amod" in l or "acl" in l) and l.count("punct") == 1 and "nummod" not in l and "advmod" not in l and len(xcomp_not)==0 and len(obl_case_not)==0 and len(obl_wrong_case)==0 and len(obl_wrong_upos)==0: 
                     self.log(node, '8','modifier and adverbial in longer simple clauses') # xcomp - Lvl 8
                     self.log(node, '13','modifier and adverbial in longer simple clauses')
     
@@ -406,11 +406,11 @@ class MarkLevels(Block):
                     self.log(node, '10','subject, object and adverbial in longer simple clauses') # csubj:cop inf - Lvl 10
                     self.log(node, '13','subject, object and adverbial in short simple clauses')
                 # obj - nom, gen, par (+ subject, adverbial)
-                if deprel == "obj" and [n.deprel for n in node.descendants].count("obj") < 2 and feats["Case"] in ["Nom","Gen","Par"] and "obj" in sibdeprels and ("csubj" in l or "nsubj" in l or "nsubj:cop" in l or "csubj:cop" in l) and ("obl" in l or len(xcomp_yes)>0 or len(xcomp_sup_yes)>0 or len(advmod_yes)>0) :
+                if deprel == "obj" and l.count("obj") < 2 and feats["Case"] in ["Nom","Gen","Par"] and "obj" in sibdeprels and ("csubj" in l or "nsubj" in l or "nsubj:cop" in l or "csubj:cop" in l) and ("obl" in l or len(xcomp_yes)>0 or len(xcomp_sup_yes)>0 or len(advmod_yes)>0) :
                     self.log(node, '10','subject, object and adverbial in longer simple clauses') # obj - Lvl 10
                     self.log(node, '13','subject, object and adverbial in short simple clauses')
                 # obj - nom, gen, par (+ subject, adverbial)
-                if deprel=="obj" and feats["Case"] in ["Nom","Gen","Par"] and node.parent.feats["VerbForm"]=="Conv" and ("csubj" in l or "nsubj" in l or "nsubj:cop" in l or "csubj:cop" in l) and [n.deprel for n in node.descendants].count("obj") < 2 and [n.deprel for n in node.descendants].count("ccomp") == 0 and ("obl" in l or len(xcomp_yes)>0 or len(xcomp_sup_yes)>0 or len(advmod_yes)>0) :
+                if deprel=="obj" and feats["Case"] in ["Nom","Gen","Par"] and node.parent.feats["VerbForm"]=="Conv" and ("csubj" in l or "nsubj" in l or "nsubj:cop" in l or "csubj:cop" in l) and l.count("obj") < 2 and l.count("ccomp") == 0 and ("obl" in l or len(xcomp_yes)>0 or len(xcomp_sup_yes)>0 or len(advmod_yes)>0) :
                     self.log(node, '10','subject, object and adverbial in longer simple clauses') # obj - Lvl 10
                     self.log(node, '13','subject, object and adverbial in short simple clauses')
                 # obl (+ subject, object)
@@ -439,11 +439,11 @@ class MarkLevels(Block):
                 # LEVEL 11
                 # 4 adverbials, 2 subjects, 4 predicatives
                 # nsubj:cop (+ adverbial, predicative)
-                if deprel == "nsubj:cop" and upos in ["NOUN","PRON","PROPN","ADJ","NUM"] and "nsubj" not in l and "csubj" not in l and "csubj:cop" not in l and [n.deprel for n in node.root.descendants].count("nsubj:cop") < 2 and ("obl" in l or len(xcomp_yes)>0 or len(xcomp_sup_yes)>0 or len(advmod_yes)>0) :
+                if deprel == "nsubj:cop" and upos in ["NOUN","PRON","PROPN","ADJ","NUM"] and "nsubj" not in l and "csubj" not in l and "csubj:cop" not in l and l.count("nsubj:cop") < 2 and ("obl" in l or len(xcomp_yes)>0 or len(xcomp_sup_yes)>0 or len(advmod_yes)>0) :
                     self.log(node, '11','subject, predicative, adverbial in even longer simple clauses') # nsubj:cop - Lvl 12
                     self.log(node, '13','subject, predicative, adverbial in even longer simple clauses')
                 # csubj:cop (+ adverbial, predicative)
-                if deprel == "csubj:cop" and feats["VerbForm"]=="Inf" and [n.deprel for n in node.root.descendants].count("csubj:cop") < 2 and "nsubj" not in l and "csubj" not in l and "nsubj:cop" not in l and ("obl" in l or len(xcomp_yes)>0 or len(xcomp_sup_yes)>0 or len(advmod_yes)>0) :
+                if deprel == "csubj:cop" and feats["VerbForm"]=="Inf" and l.count("csubj:cop") < 2 and "nsubj" not in l and "csubj" not in l and "nsubj:cop" not in l and ("obl" in l or len(xcomp_yes)>0 or len(xcomp_sup_yes)>0 or len(advmod_yes)>0) :
                     self.log(node, '11','subject, predicative, adverbial in even longer simple clauses') # csubj:cop - Lvl 12
                     self.log(node, '13','subject, predicative, adverbial in even longer simple clauses')
                 # governor of nsubj:cop - nom, par (+ subject, adverbial)
