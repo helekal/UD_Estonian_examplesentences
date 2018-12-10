@@ -273,11 +273,11 @@ class MarkLevels(Block):
                 # LEVEL 5
                 # 2 modifiers
                 # nmod - gen
-                if deprel=="nmod" and upos in ["NOUN","PROPN"] and feats["Case"]=="Gen" and len(chdeprels)==0 and node.xpos!="Y" and "nummod" not in l and "acl" not in l and len(xpos_y_not)==0 and len(nmod_amod_not)==0 :
+                if deprel=="nmod" and upos in ["NOUN","PROPN"] and feats["Case"]=="Gen" and len(chdeprels)==0 and "nummod" not in l and "acl" not in l and len(xpos_y_not)==0 and len(nmod_amod_not)==0 :
                     self.log(node, '5','nominal modifier (gen) in short simple clauses') # nmod - Lvl 5
                     self.log(node, '13','nominal modifier (gen) in short simple clauses')
                 # amod - all cases
-                if deprel=="amod" and upos in ["ADJ"] and len(chdeprels)==0 and node.xpos!="Y" and "nummod" not in l and "acl" not in l and len(xpos_y_not)==0 and len(nmod_amod_not)==0:
+                if deprel=="amod" and upos in ["ADJ"] and len(chdeprels)==0 and "nummod" not in l and "acl" not in l and len(xpos_y_not)==0 and len(nmod_amod_not)==0:
                     self.log(node, '5','adjectival modifier in short simple clauses') # amod - Lvl 5
                     self.log(node, '13','adjectival modifier in short simple clauses')
                 
