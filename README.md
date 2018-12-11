@@ -20,7 +20,7 @@ Below are given parts of the sentence and their corresponding syntactic relation
 
 
 ### How to run and compile a similar corpus?
-File "marklevels.py" reads a file in CoNLL-U-format, adds information about levels (Lvl="level_number") or unsuitable sentences ("Not"/"NotTrv"). For running files "markrootlevels.py", "inappropriate_words.txt" (list of inappropriate words) and "unsuitable_adverbs.txt" (list of unsuitable adverbs) have to be in the same folder (udapi-python/udapi/block/ud) with "marklevels.py". 
+File "marklevels.py" reads a file in CoNLL-U-format, adds information about levels (Lvl="level_number") or unsuitable sentences ("Not"/"NotTrv"). For running files "marklevels.py" and "markrootlevels.py" have to be in the same folder (udapi-python/udapi/block/ud). The location of files "inappropriate_words.txt" (list of inappropriate words) and "unsuitable_adverbs.txt" (list of unsuitable adverbs) depends on Python Path.
 
 Python file "marklevels.py" is a command line program:  cat „INPUT_FILE“ | udapy -s ud.MarkRootLevels | udapy -s ud.MarkLevels > „OUTPUT_FILE“. 
 
